@@ -1,0 +1,23 @@
+V.imp for interviews watch this video jab bhi interview dene jaao tab 
+
+* hydration => suppose we have a button but filhal uske click krne sai click nhi ho rha hai kyoki Javascript abhi present nhi hai
+		usme but jese hee ham javascript ko uske andar daaldenge (inject krwa denge) usski 'HYdration kehte hai'
+
+*Reconcilation => React library ki ekk Recursive Algorithm hai jo ki compare krti hai hamare Document ke DOM ko and React ke DOM
+		 ko and fiir decide krti hai ki kya kya changes krne hai React ki Dom mai. sirf vhi chije 
+	         update kregi ye algorithm poora DOM update nhi kregi
+
+*Fibre => Improves the performance in behind the scenes. suppose UI mai its not necessary ki harr update/change ko on the spot
+	  change/update/apply kro sometimes esa krna can be Wasteful. so fibre ekk saath mai bohot saare updates krta hai jab 
+	 unn updates ki actual need hoti hai tab.
+	
+	Fibre USES :	* pause work and come back to it later.
+			* assign priority to different types of work.
+			* reuse previously completed work.
+			* abort work if it's no longer needed.
+
+NOTE : abhi Virtual Dom use nhi hota hai uski jagah Fibre ko use krte hai
+
+
+for more:
+* Read the Fibre documentation from here => https://github.com/acdlite/react-fiber-architecture
