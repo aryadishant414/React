@@ -14,7 +14,9 @@
    
     in SIMPLE : hooks ki help sai ham
     UI wale part mai easily changes kar skte hai . for ex: ekk jagah kisi variable ki value ko update kiya or sab jagah 
-    wo variable ki value change ho jaaegi only with the help of hooks
+    wo variable ki value change ho jaaegi only with the help of hooks. agr ham hooks nhi lagate too hamare actual variable
+    ki value update too hoti but UI mai updated value show nhi hoti isilie hamm Hooks ka use krte hai jisse hamare UI mai bhi 
+    value update ho jaae.
     We have so many hooks available in React. IN OUR 'Counter Project' we have used "useState" hook.
 
 * 'useState' hook => 'useState' hook hame ekk array deta hai jisme 2 chije hoti hai. 
