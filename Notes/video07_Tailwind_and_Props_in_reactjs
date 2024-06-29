@@ -1,0 +1,8 @@
+* Props => hamari properties ko hee 'props' bolte hai 'React' library mai 
+* in this video we have learnt that how to inject tailwindCss in our project and how to use props in React
+
+* baaki 03tailwindprops wale folder mai hee jagah jagah par apne comments add kar rkhe hai ham vaha sai hee padh skte hai
+
+* hamari 'App.jsx' file mai jab ham return karwate hai hamare banaye hue component ko too uss return statement mai hee ham kuch properties bhi add
+ kar skte hai 'App.jsx' mai dekhlena or fiir jab hamari banayi hue component wali file ('components folder ke andar "card.jsx" file dekh lena') 
+ usme function apne andar paramter leta hai "Props ko". mtlb ki react allow krta hai ye krne ke liye.
