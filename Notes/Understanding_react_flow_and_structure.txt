@@ -1,0 +1,47 @@
+* we can create React by 2 Methods :
+
+(Method 1.) => abb ham yeh method use nhi krte hai coz isme bohot time lagta hai install hone mai kyoki yeh bina kaam ki chijo ko bhi install krdeta hai
+   USE THE BELOW COMMANDS
+   * npx create-react-app my-app => create the react app (basically folder banaega jisme react ka sab kuch store hoga)
+   * cd my-app => go to the folder jo hamne create kiya hai
+   * npm run start => start our live project
+ 
+(Method 2.) => yeh ham use krte hai. fast bhi hota hai and sirf kaam bhi chije hee install krta hai
+	USE THE BELOW COMMANDS
+	* npm create vite@latest
+	* now it will ask for our project name
+	* npm install => jo bhi chije install nhi hogi wo yeh command install krdega (ex:node modules install nhi the abb yeh install krdega)
+	* npm run dev => start our live project
+
+
+// PreRequisites : 
+ 1. when we create our components and agr jo component 'html' element return krr rha hai too uss 
+    component file ka name '.jsx' extension sai dena is compulsory or agr yeh component koi html element return nhi kar rha hai
+    too component file extension '.js' bhi de skte hai (BUT PREFER KRO HARR BAAR '.jsx' EXTENSION HEE DO ISME ERROR CHANCES KAM HAI
+	//Component => YE "chai.js" file jo hamne banayi hai yeh 'COMPONENT' HEE HAI
+	// mtlb ki yeh jo functions ham 'export' krte hai inhee hee components kehte hai
+ 2. hamne jo component file banayi hai ya fiir jo bhi component file hamare paas padi hai isme jo function hai jo ki hamm export
+krwa rhe hai uss function ka name should be starting in 'Capital letter'
+
+3. component (jo file hamm bana rhe hai jisme function hoga and uss function ko export krenge) 'file-name' should start in Capital
+letter . (HALAKI ERROR TOO NHI DEGA BUT GOOD PRACTICE HAI)
+
+
+
+* Bundler => Behind the scenes magic krna. kaafi libraries Bundlers ko use krti hai jesi react bhi bundler ko use krti hai
+ , vite bhi krti hai , etc.
+ behind the scenes ka mtlb hai ki ham react mai too direct hee html wala syntax likhte hai but react ko ye html wala syntax
+samaj nhi aata hai so react kya krta hai ki wo 'Bundler' use krta hai jiski help sai hamara likha hua saara code 
+convert ho jaae uss form mai jiss form mai react ko smj aata hai.
+react ko kesa code smj aata hai => jo hamne hamari custom react banayi hai na wo wala code react ko smj aata hai it means React 
+behind the scenes hamne jo custom react ke andar jo code likha hai wesa code padhti hai..
+
+
+* JSX => combination of javascript and html.
+ 'x' means ki html wala part and baaki JS means javascript wala part
+
+
+*v.imp for Interviews :
+	 Evaluation Expression => final outcome jo aata hai wo. it is written inside '{}' . baaki jitna bhi code 
+	wala part hai(ex:if else hogya ya kuch or code bhi) 
+	wo inn curly braces ke andar nahi aata hai. wo kahi bahar likho yaha iske andar too sirf final output hee aayega
