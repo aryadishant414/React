@@ -1,0 +1,102 @@
+//Interviewer sabse pehle hame kahega ki ekk Counter App banado react sai jo ki button ko click krne par value Increment and 
+ Decrement krega
+abb jese hee hamne wo button create krdiya (see the code from "02counter" folder) wese hee isika followup ekk Question aata hai
+ki agr mai iss niche wale "addValue YA removeValue" function mai multiple times 'setCounter' function likh deta hu too kya hoga ye batao without code ko run kre
+
+
+TOO => hamara output vhi hoga filhaal too jo pehle tha i.e : mtlb ki ekk click par ekk hee value update ho rhi hai kyoki 'useState' hook ko ye saare task same hee dikh rhe hai isliye 
+
+ABB => baat krte hai hamare 'setCounter()' wale function ki :
+			ye 'setCounter()' function apne andr ekk 'Callback function' ko leta hai. 
+                       jii haa ye ekk hidden feature hai 'setCounter()' function ka
+		       iss call back function ke anadr ekk parameter pass hota hai uss paramter
+			ke andar value hoti hai 'Previous Updated State ki' LETS SEE :
+						setCounter( (prevCounter) => prevCounter + 1); => too abb ye function sai abb hoga yeh ki jitne bhi setCounter functions likhe hue hai ekk ke niche ekk abb unn sab ko 'useState' hook ekk bundle (bunch mai) mai daaldega and abb inki value ko ekk 
+						saath bhejega that means iss baar inn sabka total sum (ya minus depends on add ka function call kiya hai ya subtract ka) return hoga i.e 19. this is only possible coz of 'setCounter' function ke anadar wlaa hidden 'prevCounter' parameter
+
+// BSS YAHA PAR FINISH HOGYA YE INTERVIEW QUESTION KA ANSWER baaki too vhi same code likha hua hai jo hamne '02counter' wale project mai bannaya tha.
+
+
+function App() {
+
+  let [counter , dishantCounter] = useState(15)  // 'useState' hook hame ekk array deta hai jisme 2 chije hoti hai. pehli too ekk value jo bhi apn use state mai pass krte hai and dusri ekk function jo ki responsible hota hai iss array ki pehli waali value ko update krne ke liye.
+  // iss array ki dono value ka naam ham kuch bhi rakh skte hai
+  
+  // let counter = 15
+  const addValue = () => {
+      setCounter(counter + 1) 
+     setCounter(counter + 1)
+     setCounter(counter + 1)
+     setCounter(counter + 1)
+  }
+
+  const removeValue = () => {
+    counter = counter - 1;
+    dishantCounter(counter)
+  }
+
+ return (
+    <>
+      <h1>Chai aur react</h1>
+      <h2>Counter value: {counter} </h2>
+
+      <button
+      onClick={addValue}
+      >Add value {counter}</button>
+      <br />
+      <button
+      onClick={removeValue}
+      >Decrease value {counter} {addValue}</button>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+
+  const [counter, setCounter]  = useState(15)
+
+  //let counter = 15
+
+  const addValue = () => {
+    //counter = counter + 1
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1 )
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
+    
+  }
+
+  const removeValue = () => {
+    setCounter(counter - 1)
+  }
+  
+  return (
+    <>
+      <h1>Chai aur react</h1>
+      <h2>Counter value: {counter}</h2>
+
+      <button
+      onClick={addValue}
+      >Add value {counter}</button> 
+      <br />
+      <button
+      onClick={removeValue}
+      >remove value {counter}</button>
+      <p>footer: {counter}</p>
+    </>
+  )
+}
+
+export default App
