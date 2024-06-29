@@ -1,0 +1,23 @@
+* What is a Hook?
+  => Hooks allow us to "hook" into React features such as state and lifecycle methods.
+	hook meaning in hindi => bandhish/restrictions
+   Hook kehta hai ki UI wala saara part mai apne aap handle krunga tum bss apne return wale function mai ekk baar batado
+   ki tumhe kya karwana hai fiir aage UI mai kese kya update krna hai wo mera kaam hai.
+	UI update mtlb? => mtlb ye ki suppose button click krne par hamare button ki value increase honi chaiye too UI mai increase 
+	hook apne aap karwaega hame bss hamara return wala function likhna hai and usme jo bhi code logic ham likhenge
+	uske according UI wala part hook apne aap update krdega.
+
+
+* Why do we need hooks?
+  => Hooks allow function components to have access to state and other
+    React features. Because of this, class components are generally no longer needed. 
+   
+    in SIMPLE : hooks ki help sai ham
+    UI wale part mai easily changes kar skte hai . for ex: ekk jagah kisi variable ki value ko update kiya or sab jagah 
+    wo variable ki value change ho jaaegi only with the help of hooks
+    We have so many hooks available in React. IN OUR 'Counter Project' we have used "useState" hook.
+
+* 'useState' hook => 'useState' hook hame ekk array deta hai jisme 2 chije hoti hai. 
+   pehli too ekk value jo bhi apn use state mai pass krte hai and dusri ekk function jo ki responsible hota hai iss
+    array ki pehli waali value ko update krne ke liye.
+  // iss array ki dono value ka naam ham kuch bhi rakh skte hai
