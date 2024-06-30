@@ -1,0 +1,17 @@
+* In this React Project we have use TailwindCss for the styling.
+  SAARA work hamne 'App.jsx' file mai kiya hai dekhlena
+
+* const [color , setColor] = useState("olive")
+ what does this upper line indicates? => This line of code is using the React Hook called useState to manage the state in a functional component. Here's what it does:
+
+const [color , setColor]: This syntax is called array destructuring. It declares two variables, color and setColor.
+
+color: This variable holds the current state value, which is "olive" initially.
+setColor: This function is used to update the color state.
+useState("olive"): The useState Hook is called with an initial state value of "olive". This means that when the component first renders, the color state will be set to "olive".
+
+So, to summarize, this line of code creates a state variable color with an initial value of "olive", and setColor is the function used to update the value of color.
+
+
+* ye onClick wale eventListener mai hamne callback function q bheja hai ese : " onClick={ () => setColor("red")} " ??? => ITS BECAUSE ye onClick function ki property hoti hai ki wo apne anadr ekk function ko leta hai. SYNTAX hai so no ARguments. hamne 'callBack function' bheja hai but chhahe too normal function bhi bhej skte hai. main baat ye hai ki 'onClick' ke andar hamesha function hee bhejna hai (mtlb ki function ko hee pass krna hai call nhi krna hai) NO CHOICE.
+what if hamne function pass nhi kiya and call krdita toh??  => too fiir wo function execute too ho jaaega but hamne nhi pata hai na ki onClick ke anadar jo function call kiya hai hamne wo ekk 'function' hee return krr rha hai ya fiir kuch or (mltb ki ho skta hai wo koi string return krde , koi number return krde) . islie ITS BETTER to just pass the function ( in 'onCLick' event listener ) instead of function calling.
