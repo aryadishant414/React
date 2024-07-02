@@ -1,0 +1,20 @@
+* Step 1 => We have created our own Custom Hook.
+            hooks wale folder mai dekhlena file => 'useCurrencyInfo.js'
+Note : '.js' extension islie use kiya hai kyoki isme hamm pure Javascript hee return ki hai. ITS A GOOD practice ki jab jo chij return kro uske according hee extension diya kro. agr hamari file mai 'jsx' (HTML + Javascript) return ho rhi hoti too ham hamm '.jsx' extension dete
+
+* Step 2 => We have created a folder of 'Components' in 'src' folder. and inside that 'Components' folder we have created a file : 'InputBox.jsx'
+
+        By completing this 'InputBox.jsx' file hamara majority of the kaam too ho chuka hai bss abb hame chijo ko jamana hai
+
+
+* Step 3 : Import 'InputBox.jsx' file in "App.jsx" waali file. NOte : hamne 'input.jsx' waali file ko ekk or file banayi hai 'index.js' and isme import krwali. coz 'index.js' file byDefault call hoti hai. ITS A GOOD PRACTICE to use in BIG PROJECTs.
+WHY GOOD PRACTICE TO MAKE 'index.js' => coz hamm bohot saari components files banate hai jisse bohot confusion ho jaata hai ki kab kisko kaha import and export krwana hai. islie ham kya karte hai ki ekk 'index.js' file bana lete hai and isme saari components files jo hamne banayi hai unko import karwa lete hai and fiir baadme iss 'index.js' single file ko aage EXPORT karwa lete hai
+
+
+* Step 4 : Abb jaao 'App.jsx' file mai and import karwali hamara banaya hua custom 'HOOK'.
+
+
+* NOTE : IN REACT REMEMBER THE 'KEYS' in Loop MTLb : Agr react mai loops use krne hai too 'key' jrur likhna usme agr nhi likhi too performance down ho skti hai.
+
+
+NOTE : Iss PRoject mai muje abhi bhi CONFUSION HAI SO JAB BHI TIME MILE ISKO REVISIT KRNA HEE HAI
