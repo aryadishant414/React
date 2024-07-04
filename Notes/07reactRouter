@@ -1,0 +1,74 @@
+
+<!-- React Router -->
+It is a Package
+The react-router-dom package contains bindings for using React Router in web applications.
+
+
+* Why we Need 'Routers' in React ? => coz React Router is used for managing navigation in a React application.
+    Navigation manage mtlb? => Define Routes: Set up different URL paths that correspond to different components or pages in your app.
+    Navigate Programmatically: Easily navigate between different routes without reloading the page.
+    Dynamic Routing: Create routes that can change based on the application's state or user actions.
+    Nested Routes: Organize routes hierarchically to reflect the structure of your app.
+    URL Parameters: Capture and use parameters from the URL to display dynamic content.
+    Overall, React Router helps create a seamless, single-page application experience by allowing users to navigate between views or pages efficiently.
+    IN SHORT => 'React Router' help krte hai hamne ekk jagah sai dusri jagah par jaane ke liye without loading the page.
+
+
+
+*'Link' in "React Router Dom" => anchor tag or <a> tag is not used in React as it refreshes the whole page which is not the concept of react, that's why 'Link' tag is used in react which is imported from react-router-dom. SO BASICALLY HAMNE 'React Router Dom' padha hai which is not the core feature of react its a Package ko hi ham install krte hai and then usko react ke andar import krwate hai.
+
+
+* 'NavLink' in "React Router Dom" => 'NavLink' has some additional features like 'highlighting the active nav page'. 
+
+
+
+<!-- REACT ROUTER FULL STEPS IN CONCISE WAY -->
+* Sabse pehle apne jitne bhi components banana chahte hai ham wo banalo 'src' folder mai hee banana
+     unn components mai jo jo chijo ki jrurat hoti hai uske according unhe import krwalo. ex : 'Header' component ke andar hamne 'Link and Navlink' dono ko use kiya tha islie unn dono ko import krwa liya. SIMILARLY, jiss component mai jiska use ho rha hai uske according hame chijo ko import krwana hai
+
+* Now Create a 'Layout.jsx' file in 'src' folder
+        ye LAyout file islie banai hai kyoki hamm isme ekk function banaenge function name can be anything of our choice but iss function ke andar ham 'Outlet' ka use krenge jo ki 'react-router-dom' sai ham import krwaenge.
+         "Outlet" => iska use krke ham chijo ko static bana skte hai. mtlb ki hamare webPage ka konsa content static rehna chahiye and konsa change ye ham 'Outlet' ki help sai krte hai. jaha bhi ham 'Outlet' likhenge iss function mai too sirf wo wala content change hoga baaki sab content static rhega (sab mtlb ki iss 'Layout' function mai jinn components ko call kiya hai wo 'Components' static rahenge wo change nhi honge).
+         For ex : in our case "Layout.jsx' file mai hamne 'Header and Footer' ke bich mai "Outlet" ko likha hai it means ki hamare "header and footer" static rhenge wo change nhi honge inke bich mai jo bhi content aayega sirf wo hee change hoga. bich wala content hee q change hoga ? => its because outlet ko hamne 'Header and Footer' component ke bich mai likha tha and w.k ki outlet jaha bhi likh hai uss particular AREA ka content hee change hoga
+
+        Outlet MAIN FUNCTION => iski help sai hee too ham nesting krr paa rhe hai ki slash ('/') ke baad konse page par jaana hai
+
+* Abb Layout banane ke baad saara main kaam jo aata hai wo 'main.jsx' file kregi
+    in "main.jsx" file create the router kese banana hai wo dekhlena 'main.jsx' file mai sai syntax
+    and router banane ke baad router ko return krdega 'main.jsx' 
+
+    BSS YAHI THA ROUTER KA CONCEPT.
+
+    NOTE : Router ka use hamare Web Page ko dynamic banane ke liye krte hai       
+
+    * Nesting ke andar bhi nesting krni hai too : => too jiss bhi component ki nesting krni hai sabse pehle too uske 'Router' ko 'closing router' banalo
+        suppose 'about' wale component mai muje nesting krni hai:
+       
+       // ye niche wala router create wala code copy kiya hai 'main.jsx' sai 
+        const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path='/' element={<Layout />}>  
+            <Route path='' element={<Home />} />
+            <Route path='about' element={<About />} > 
+                <Route path='hitesh'/>
+            </Router>
+            <Route path='contact' element={<Contact />} />
+            <Route path='user/:userid' element={<User />} />
+            <Route
+            loader = {githubInfoLoader}
+            path='github' 
+            element={<Github />} 
+            />
+    </Route>
+
+    NOTE : jisko bhi hamne or nesting kiya hai uske andar automatically ekk or slash by-default add ho jaaega
+    so OUR ABOUT wale component ki nesting ko access krne ke liye we will write : " /about/hitesh "
+
+
+<!-- DATA LOADING IN MORE OPTIMISED WAY -->
+* 'useLoaderData' Hook => this hook is more optimised Hook. In our 'Github' component jab bhi hamara home page load hoga and ham jab bhi github par click krne jaaenge too click krne ke liye uspe 'hover' too krna hee hoga its obvious. The moment jab ham 'Github' wale component par hover krenge tab hee sai wo component load hone lag jaaega backend mai hee so jab bhi ham click krnge wo data hame wait nhi krwaega and data direct show ho jaaega. ye 'useLoaderData' hamare loaded data ko 'Cache memory' mai store krke rkhta hai jisse jab bhi ham uss component par click kre tab hame wo data mill jaae bina kisi deri ke
+
+
+<!-- BSS YAHI THA ISS PROJECT MAI
+ ********** PROJECT COMPLETED  ***********
+ -->
