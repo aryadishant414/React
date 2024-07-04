@@ -1,0 +1,55 @@
+* 'Context API' => used to control the "State Management" of our App/Project.
+'State Management' : jo bhi data hamari App mai flow ho rha hai usko efficiently flow krwana hee State Management hota hai
+
+  'Context' => Ekk Global Variable ki tarah hee maano or kuch nhi hai ye. or fiir iss global variable ko hamm jaha need hoti hai vha use krlete hai
+    
+
+ Ky hota hai 'Context Api' mai? => isme ham ekk global variable banate hai and iss variable ke andar wo data daalte hai jiski need padne wali hai and uss data ko hamm harr jagah flow nhi krwana chahte
+
+ v.Imp ......BUT WHY WE NEED CONTEXT API? => coz react mai data flow ekk hee tarah sai hota hai. i.e jisko bhi data ki need hai directly data uss tak nhi pahuchta hai. wo sab jagah flow hota hua jaata hai
+        Suppose mere pass ekk Home page hai and usme 2 sections sai ekk left sction and ekk right section. now in the right section also i have further division i.e ekk upper part hai and ekk lower part. now lower part mai ekk or division hai i.e iss lower division mai ekk card pada hai abb iss card ke andar mai wo information access krna chahta hu jo ki kahi or padi hai, maanlo jaha sai muje iss card mai information chahiye wo ekk form hai. student form fill krr rha hai and jese hee student form ko fill krke Submit krega wese hee yaha iss card ke andar wo information load ho jani chahiye.
+        BUT DIRECTLY YAHA wo information access nhi hogi BECAUSE REACT KAAM HEE ESE HEE KRTA HAI ki : information sab jagah travel krti krti aayegi i.e sabse pehle home page ke andar information aayegi then uske right side wale section mai aayegi then uske down wale part mai aayegi OR FIIR uske baad iss down wale part mai jo card pada hai isme ye information load ho jaaegi.
+        ISKA MTLB TOO YE HUA KI unnecessaily information jo ki sirf card ko hee chahiye thi wo sabke pass hoti hue aayi hai jinhe iss information ki need bhi nhi thi. TOO FIIR REACT KA YE NATURE TOO BOHOT KHARAB HAI . TOO BSS yahase aata hai hmaara concept of "PROP DRILLING" (means propeties ko ekk variable mai drill krna and baadme jab bhi need ho uss information/data ki usko directly use krna), i.e 'CONTEXT API' ka concept 
+        so 'Context API' iss problem ko resolve krdeta hai
+        NOTE : 'Context-APi' ekk react LIBRARY ke andar hee hoti hai and isko purely react mai REACT k liye hee banaya gaya hai for React Users. iske alawa or bhi libraries hai Like : 'Redux' Library => ye bhi State Management mai hee kaam aati hai. Basically 'Redux' is an Easier Version isko kaii log 'RTK (Redux Tool Kit)' naam sai bhi jaante hai
+
+
+ *STEPS : 
+        1. create a folder in 'src' folder name it as 'context' (folder name 'context' jruri nahi hai but sabhi log mostly yahi name use krtee hai). 
+            AFter creating 'context' folder create a file (apne according file ka kuch bhi name rkhlo. hamne iska extension '.js' diya hai coz ye purely javascript hee return krr rhi hai agr html bhi return krti saath mai too ham '.jsx' extension dete). ABB iss file mai 'context' create krdo see from 'UserContext.js' file
+
+            NOte : harr ekk 'context' ekk "Provider" hota hai. 
+            'context' hame ekk major chij dega i.e 'a provider' , kyoki context hai kya ? context hame ekk vaiable provide hee too krr rha hai.. too harr ekk context ekk provider hota hai. So, 'userContext' (jo variable hamne banaya hai) bhi apne aap mai ekk provider hai
+            
+            Chijo ko wrap krna hee 'providing' hoti hai mtlb ki jitni bhi chije hai unhe ekk 'fragment' (<></>) ke andar wrap krwana hoga
+
+
+        2. we have created a file 'UserContextProvider.jsx'
+            Inside this file : 
+                                'children' => jese hamare 'div' wagara hote hai na jiske andar koi information store hoti hai just like that children ka mtlb bhi yahi hai ki jo bhi information aa rhi hai wo isme padi hai.
+
+                                'value' => mtlb ki kon konsi values ko mai provide krwana chahta hu. too hamne wo saari values dedi jinko mai directly acces krna chahta hu hamare 'provider' sai
+
+                        By Finishing these 2 steps. It means ki Hamne hamara Store too bana diya hai but abb iss store (Store mtlb ki vahi variable jo hamne banaya hai jisko hamm kahi bhi use krna chhahte hai directly) ka access kese milega?? iske liye now go to Step 3
+
+
+
+        3. Kuch log 'App.jsx' mai store ka accces de dete hai and kuch log 'main.jsx' mai store ka access de dete hai Both are perfectky fine, bss jisme bhi store ka access dena chahte hai usme iss store ko import krwana padega (hamare case mai 'userContextProvider' hamara store hai)
+        hamm 'App.jsx' mai store ka access de rhe hai
+
+        4. inside 'App.jsx' hamm abhi jo bhi 'UserContextProvider' ke andar jo bhi component ham lenge uska hame access mill jaaega.
+        too iske andar jinnn bhi components ka access lena hai pehle unhe banana bhi too pdega na. so pehle Components banalo. 'src' folder ke andar banana hai
+
+        5. Hamne 2 components banae hai 'components' folder ke andar. 'Login.jsx' (isme data send krna sikh rhe hai) and 'Profile.jsx' (isme data receive krna sikh rhe hai)
+
+
+# /////////////////////////////////////////////////////////////////////////
+BOHOT time dene ke baad abb ye 'useContext' ka concept samaj mai aaya hai.
+# SAAR OF THIS 'useContext' hook in react : 
+    Our Goal for this Project was : hamare pass ekk login page hoga and jab bhi user login krega tab usko greetings show hogi ex : Welcome Name
+                            Approach : sabse pehle too hamne ekk 'context' ko create kiya in "UserContext.js" component file then uss context ko provide krne ke liye ekk component file banayi 'UserContextProvider' abb iss component file mai hamne bataya ki konsa data hai jo ki iske childrens (jitne bhi inke andar childrens hai ex : in our case 'Login.jsx and Profile.jsx' are the childrens of this context jo ki iske andar ke data ko directly access krr skte hai) directly access krr skte hai. lekin inn childrens ko banana bhi too pdega na islie hamne inn childrens ki bhi component files banayi i.e 'Login.jsx' and 'Profile.jsx'.  abb 'Login.jsx' file mai too 'user' ke andar value set ho rhi hai and context ke andar bhi store ko rhi hai with the help of 'useContext' Hook. abb 'Profile.jsx' file user ke data ko access krr rhi hai jo ki 'UserContextProvider.jsx' pada hai with the help of 'useContext' hook
+
+                            Code dekhna samaj mai aajega abb too. agr fiir bhi kabhi bhul jaao too Chat GPT sai small small parts mai puchlena you get to know. but i am sure abb tum ye kabhi nhi bhuloge
+
+
+# SO THIS PROJECT ALSO FINISHED *****************************************
