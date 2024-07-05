@@ -15,4 +15,8 @@
 
             // TOO ISIKE SAATH HAMARA 'Theme Switcher' wala project and 'Context Switching' ka CONCEPT FINISHED here .............................................
 
+# 
+            SOME PART THAT I HAVE ADDED : 
+              "App.css" mai kuch code add kiya hai to make our backgorund also to be turn dark when we press our theme switcher ("themebtn") button. Comment add kiya hua hai 'App.css' mai dekhlena . NOTE : 'App.css' mai filhaal ye portion comment kiya hua hai because hamne ekk hamara khudka component banaya hai 'Dishant.jsx' naam sai kyoki mai ye dekhna chahta tha ki ye theme switcher jo hamne banaya hai wiht the help of 'context' API concept kya ye global code dusre components bhi use krr paate hai ya nhi. AS A RESULT Dishant component bhi iss 'theme Switcher' ko use krr paa rha hai. 
+              BUT NOTE : jiss bhi component mai hamm 'context' jo hamne banaya hai usko use krna chahte hai that component should have the matching classes jo hamne 'context' banate time define kri hai
             
