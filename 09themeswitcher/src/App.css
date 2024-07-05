@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* THIS below is the additional code that i have added to Make my "background" to be 'Dark and light' on pressing 'ThemeBtn' */
+
+/* CHAT GPT NE HELP KRII THI ISS CSS KO ADD KRNE KE LIYE */
+
+ /* html.dark { */
+  /* background-color: black; */
+  /* background-color: #1F2937;
+  color: white;
+} */
+
+/* .dark .text-gray-900 {
+  color: white;
+} */
