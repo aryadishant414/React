@@ -1,0 +1,22 @@
+// IN THIS METHOD WE ARE LEARNING THAT HOW WE CAN MAKE a THEME SWITCHER i.e 'DARK' MODE AND LIGHT 'MODE' mai change krna sikh rhe hai
+// isme bhi ham 'COntext Switching' ka use krr hee rhe hai but THIS TIME WE ARE USING 'CONTEXT SWITCHING' by another Way
+
+    // ********* ANOTHER WAY OF CONTEXT SWITCHING (Harder LAGTI HAI YE KAAFI LOGO KO BUT MUJE TOO SMJ MAI AAGYI EASY HEE HAI AGR ISSE JUST PEHLE WALA '08minicontext' wala project smj liya hai too)
+
+    * STEPS Of this Project : 
+
+            1. We have created a folder named 'contexts'
+                iss folder mai 'Theme.js' name ki ekk file banadi (iss file ke andar jo bhi likha hai bohot easy hai compare krlena iske pehle wale project mai jese context switching hue thi bilkul wese hee hai bss iske ekk hee file i.e 'Theme.js' mai hee 'context' bana bhi diya , 'contextProvider' bhi bana diya , and 'custom Hook' bhi bana diya hai)
+
+            2. create a folder named 'components' in src folder 
+                    iss folder mai apne components files create krdi i.e 'Card.jsx' and 'ThemeBtn.jsx' file padhke smj mai aajega kyoki hame '08minicontext' wala project aata hai
+            
+            3. got to 'App.jsx' iska code bhi dekhke smjme aajaega hame 
+
+            // TOO ISIKE SAATH HAMARA 'Theme Switcher' wala project and 'Context Switching' ka CONCEPT FINISHED here .............................................
+
+# 
+            SOME PART THAT I HAVE ADDED : 
+              "App.css" mai kuch code add kiya hai to make our backgorund also to be turn dark when we press our theme switcher ("themebtn") button. Comment add kiya hua hai 'App.css' mai dekhlena . NOTE : 'App.css' mai filhaal ye portion comment kiya hua hai because hamne ekk hamara khudka component banaya hai 'Dishant.jsx' naam sai kyoki mai ye dekhna chahta tha ki ye theme switcher jo hamne banaya hai wiht the help of 'context' API concept kya ye global code dusre components bhi use krr paate hai ya nhi. AS A RESULT Dishant component bhi iss 'theme Switcher' ko use krr paa rha hai. 
+              BUT NOTE : jiss bhi component mai hamm 'context' jo hamne banaya hai usko use krna chahte hai that component should have the matching classes jo hamne 'context' banate time define kri hai
+            
