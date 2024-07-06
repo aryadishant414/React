@@ -1,0 +1,18 @@
+STEps of this Project :
+
+        1. in 'src' folder create a folder 'contexts' and inside that create a file of name of your choice let it as 'TodoContext.js' abb iske anadar ka code hame easily smj mai aa jaaega
+
+        2. create a file in 'contexts' folder file name should be : 'index.js' why file name should be 'index.js' only?? its because HAMNE starting mai hee padha tha ki agar ham 'index' name sai file banate hai too first priority 'index' file ki hoti hai i.e 'index' file ke andar jitne bhi components hai wo sab bydefault aa jaate hai and iss single 'index' file ko hamm fiir aage export krwa skte hai. so 'index' file ke andar saare components pade honge 
+
+        3.  go to 'App.jsx' and iska code paste krdo coz 'UI' par filhaal hamara focus nhi hai ki ye kese bana nd all. our main focus is on building the functionality.
+
+        ABB ISSE AAGE App.jsx mai functionality add krte krte Notes bhi hamne vhi par bana liye hai
+
+        NOTE : AGAR 'index.js' file hamm bana rhe hai and uske andar agr '.jsx' files import ho rhi hai (directly ho jaati hai import ONLY IN 'index' file) TAB TOO HAME export from then uska path bhi dena pdega harr ekk file ke liye EXAMPLE KE LIYE dekhlena 'components' folder ke andar waali 'index.js' file.
+        AND AGR 'index.js' file ke andar saari '.js' extension wali components files hee aa rhi hai too fiir jo bhi files iss 'index.js' ke andar import ho rhi hai (automatically import hoti hai ONLY IN 'index.js' file) usko ekk hee line mai export krr skte hai without giving the path EXAMPLE KE LIYE DEKHLENA 'contexts' folder ki 'index.js' file 
+
+
+
+        vvvvv.IMP => ISS Project mai and 'Context' API mai time lgta hai smjne mai so AGR TIME LAG RHA HAI TOO ITS PERFECTLY FINE DONT PANIC.
+
+        ***************************** Completed 'Context API' Concept Here......******************
