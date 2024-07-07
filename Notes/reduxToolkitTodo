@@ -1,0 +1,88 @@
+ * Redux => Independent State Management Library
+               Note : Redux is 'Javascript' Library not 'react' Library 
+
+* 'Redux' ki history wagara padhni hai too 'Redux Toolkit' crash Course wala video dekhlena
+BUT HAMNE DEKH LIYA HAI TOO YAHA EXPLAIN BHI KRLETE HAI => 
+
+   * HISTORY :  Redux sai pehle 'Flux' tha i.e created by Facebook.
+        Flux : 'State Management' ke liye hee create kiya tha
+            'Flux' ka dhyan 'data-flow' par bohot jyada tha ki data ache sai flow ho BUT ITNA ACHE SAI DATA FLOW HO NHI PAA RHA THA
+                TAB FIIR 'Flux' sai inspired hoke 'Redux' aaya Which was a better version of flux but ye bhi itna jyada acha nhi tha.
+                WHY 'Redux' also not much Good? => its because 'Redux' mai hame creation wagara par bohot jyada dhyaan dena pdta tha MTLB KI BOHOT SAARE 'Setups' krne pdte the too FIIR iske baad issse acha modification aaya "redux-toolkit".
+
+                "Redux-Toolkit" => Abb isme hame itna 'Setups' wagara ka load nhi hai 'Abstraction (jyada deep mai nhi jaana)' jyada hai , 'Store' (just like our Global Variable. iska hee too use krke hamm kahipe bhi access krr skte hai jo bhi inn store mai define hai. halaki ekk application mai store too ekk hee hota hai but main store ke andar or bhi kaii mini stores bhi ho skte hai) easily create ho jaate hai. FOR ex : 'contex Api' mai bhi hamm jab contexts bana rhe the tab wo kya tha? => wo bhi too hamm stores hee bana rhe the na. but unme create krna fiir usko variable mai daalna fiir uss created store ko 'wrap' krwane ke liye ekk 'provider' banana. ye sab krna pdta tha. but 'REDUX-ToolKIT' ke andar abb ye sab problems nhi hai kyoki bohot easily hee store creation ho jaata hai
+
+                { At TimeStamp : 13:30 HISTORY COMPLETD }
+
+* NOW LETS MOVE INTO STEPS FOR setting our 'Redux-Toolkit' Project 
+STEPS : 
+        1. Create our react App => vhi hamare 'vite' sai hamm banate the wese hee project ka setup krlo
+        
+        2. 'Redux Toolkit' installation and setup. => either go to 'Redux-toolkit' official documentation and follow the steps of 'Get Started'. OR WRITE THE BELOW COMMANDS in Terminal : 
+                   1. npm install @reduxjs/toolkit
+                   2. npm install react-redux
+
+
+        3. Now Lets Create our Store(vhi global variable type ka dabba). apne upper hai apn kis folder mai bannana chhate hai. So we will create a new folder in 'src' folder and name it as : 'app' and inside this 'app' folder create a file and we have named it as 'store.js'    
+        
+
+        4. Lets create our 'Reducers' (isko ham 'slicers' bolte hai 'Redux-Toolkit' ke andar)
+                'Reducer' =>Functionality hai. 
+
+                "Reducers" ke andar ky aata hai? => 'Riducers' ke andar aati hai ->'Properties and Functions'.
+
+                'slice' => Almost Reducer ka hee bada version hai
+            
+           SO NOW GOT TO 'todoSlice.js' file and aage ke steps usme likhe hue hai. SABSE NICHE NOTES COMMENT KIYA HUA HAI
+
+
+        5.  Now GO to 'store.js' file and import karwaenge abbhi 'todoReducer' ko.
+
+        iss 'store.js' file ke andar jo import and export ho rhe hai wo bhi Syntax ka hee part hai
+        
+        ISS STEP KE BAAD APNE KISI BHI COMPONENT MAI 'STATE' (state mtlb vhi jo 'store' hamne banaya hai jiske anadar sab data pada hai.) KA ACCESS LE SKTA HU
+
+        6. NOw Create Our Components. TOo iske liye we know already ki 'src' ke anadar 'components' ka folder banayenge and then uske andar component files banayenge 
+        Hamne 2 files banayi hai components folder ke andar : 'AddTodo.jsx' and 'Todos.jsx'
+        
+        IN "AddTodo.jsx" file => iske anadar bss form daal rhe hai ham
+        In "Todos.jsx" => baaki jo bhi todos wagara bann rhe hai wo isme daal rhe hai ham
+
+        <!-- NOTE : hamm tailwind install krna bhul gaye the so INSTALL KRDENA TAILWIND KO -->
+
+        YAHA TAK AAGYE HAI MTLB STORE USKE ANDAR VALUES VAGARA SAB READY HAI ABB TOO BSS UNHE USE KRNA HAI. SO LETS MOVE TO 'STEP-7'
+
+        7. NOW LAST STEP i.e 'App.jsx' Ya fiir 'main.jsx' mai use krlo jo bhi kaam hamne kiya hai wo.
+        SO HAMM KRR RHE HAI 'main.jsx' mai iss baar
+
+
+
+
+
+
+
+
+
+
+
+
+        NOTE : in "RTK"(Redux Toolkit) => bss 4 chije hee hame pata honi chahiye : 
+                    1. Store
+                    2. Reducers
+                    3. useSelector => used to 'GET' the data/info. from the store
+                    4. useDispatch => used to 'send/add' data/info. on the store
+
+                    * 'useDispatch' => Reducer ko use krke store mai value change krta hai. INSHORT JO BHI ACTIONS HOTE HAI WO 'useDispatch' krta hai jese 'add' ya 'delete' krna IN SHORT KOI BHI FUNCTIONALITY RUN KRNI HAI TOO HAM 'useDispatch' ke through krenge. 'useSelctor' too bss values ko get/fetch krta hai from the 'store'
+        
+
+
+    ******************************** OVERALL SUMMARY / Saar *********************************
+
+                        "Redux and react-redux" both are different things. 'Redux' ekk core library hai and 'react-redux' uska ekk implementation hai wiring (ekk dusre sai connect krne ko hee hamm wiring kehte hai) krne ke liye jisse 'redux' and 'react' ki aapas mai baatchij ho paae.
+                        ABB jab ham `Redux-Toolkit` use krte hai tab kaafi kaam hamare already ho chuke hote hai.
+                        NOTE : ekk application ka ekk hee 'store' hota hai jisko bola jaata hai "Single Source of truth'
+
+
+* POORE VIDEO MAI KYA HUA HAI AND REDUX-TOOLKIT ko KESE KYA USE KRNA HAI too SAARE STEPS : 'Redux toolkit crash course' VIDEO MAI AT Time Stamp : '1:00:44'
+
+*********************** Finished 'Redux-Toolkit- Project' here. ***************************************

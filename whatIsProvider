@@ -1,0 +1,12 @@
+* Provider => its just a wrapper nothing else. wrapper means iske andar sab data wrapped(ikkata hoke) hoke pada hota hai. 
+
+    Provider ka mtlb sabme same hee hota hai 'context-API' ho chahe 'Redux-Toolkit' ho.
+
+    * ONE differnce in "Provider ki `Value`". AGR yaad ho too hamm jab bhi provider ke andar sab chijo ko wrapp krte the 'context-API' mai tab hamme uske anadar value deni padti thi ki provider ke andar jo bhi components aa rhe hai unhe ham konsi-konsi values hai jinko ham access dena chahte hai.
+
+    So HAM unn values ko 'Context-API' ke andar => 'values' hee bolte hai.
+    
+    BUt in 'Redux-Toolkit'(RTK) hamm values ko values nahi bolte hai hamm unn values ko 'store' bolte hai and isske store ke andar 'iske store' ka naam aata hai bss. BSS YAHI EKK DIFFERENCE HAI .
+
+
+    NOTE : In `Redux-Toolkit` hame provider banana nhi pdta hai bss import krwana pdta hai ('app.jsx' mai ya fiir 'main.jsx' mai its our choice. lekin ham 'main.jsx' mai krr rhe hai) coz ' react-redux' ke andar ye 'provider' wrapper already bana pada hota hai bss hame isko use krna hota hai.
