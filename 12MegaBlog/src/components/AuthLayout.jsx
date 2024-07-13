@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 
 // Note : "file name and function name" can be different. It is allowed
 
-export default function Protected({children , authentication = true}) {
+export default function Protected({children , authentication = true}) {  
     
     const navigate = useNavigate()
     const [loader , setLoader] = useState(true) // values fetch krte time jo time lagega uss doraan hamm 'Loading' likha hua user ko show krwadenge "UI" mai jisse user experience acha ho user ko acha lage WITH the help of This "useState" hook

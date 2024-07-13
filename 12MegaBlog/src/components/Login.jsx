@@ -5,7 +5,7 @@ import {Button , Input ,Logo} from "./index"
 import {useDispatch} from "react-redux"  // Store mai updatation krne ke liye isko use krte hai
 import {login as storeLogin} from '../store/authSlice'
 import {useForm} from "react-hook-form"
-import authService from "../appwrite/auth"
+
 
 function Login() {
     

@@ -5,6 +5,7 @@ import {login} from '../store/authSlice'
 import {Button, Input, Logo} from './index.js'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
+import { useState } from 'react'
 
 
 function Signup() {
@@ -14,13 +15,13 @@ function Signup() {
     const {register, handleSubmit} = useForm()
 
     const create = async(data) => {
-        console.log(`CREATE KE ANDAR DATA HAi : $(data)`);
+        // console.log(`CREATE KE ANDAR DATA HAi : $(data)`);
         setError("")
         try {
             const userData = await authService.createAccount(data)
             if (userData) {
-                const userData = await authService.getCurrentUser()
-                if(userData) dispatch(login(userData));
+                const userKaData = await authService.getCurrentUser()
+                if(userKaData) dispatch(login(userKaData));
                 navigate("/")
             }
         } catch (error) {

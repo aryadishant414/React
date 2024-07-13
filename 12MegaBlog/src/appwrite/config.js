@@ -40,7 +40,7 @@ export class Service {
                     status,
                     userId,
                 }
-            );
+            )
         } catch (error) {
             console.log("Appwrite service :: createPost :: error", error);
         }
@@ -54,6 +54,11 @@ export class Service {
 
     // 'Update Post' Service
     async updatePost(slug , {title , content , featuredImage , status}) {
+        console.log("Content:", content, "Type:", typeof content);
+        if (content.length > 255) {
+            console.error("Content exceeds the maximum length of 255 charactersxx.");
+        }
+
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -89,7 +94,7 @@ export class Service {
             conf.appwriteDatabaseId,
             conf.appwriteCollectionId,
             slug  // This is our Document Id
-            );
+            )
             return true // agr post successfully delete hogyi hai too 'true' return krdiya
         } catch (error) {
             console.log("Appwrite serive :: deletePost :: error", error);
@@ -153,7 +158,7 @@ export class Service {
                 conf.appwriteBucketId,
                 ID.unique(),
                 file
-            );
+            )
         } catch (error) {
             console.log("Appwrite serive :: uploadFile :: error", error);
             return false
@@ -168,11 +173,13 @@ export class Service {
 
     // 'Delete a File' Service
     async deleteFile(fileId) {
+        console.log("DLEETE KE ANADAR AAGGYEEEE HAI")
 
         try {
             await this.bucket.deleteFile(
                 conf.appwriteBucketId,
-                fileId
+                fileId,
+                console.log("Delete ke Tryy KE ANADAR AAGGYEEEE HAI"),
             )
             return true
         } catch (error) {

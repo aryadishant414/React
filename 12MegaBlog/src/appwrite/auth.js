@@ -21,6 +21,7 @@ export class AuthService {
     async createAccount({email , password , name}) {
         try {
             const userAccount = await this.account.create(ID.unique() , email , password , name);
+            console.log("HAA BHAI USER ACCOUNT BANN GAYA HAI SUCCESFULLY");
             if (userAccount) {
                 // agar iss condition mai aaye hai means account create ho chuka hai too fiir 'call another method' user KO LOGIN BHI KARWA HEE DETE HAI
 
@@ -41,8 +42,12 @@ export class AuthService {
     // LOGIN
     async login({email , password}) {
         try {
-            return await this.account.createEmailSession(email , password)
+            console.log("EMAIL Session mai 1st Time ham TRY BLOCK KE ANDAR AAGYE HAI HAM");
+            // return await this.account.createEmailSession(email , password); // yeh tha hamara wala method
+            return await this.account.createEmailPasswordSession(email , password);
+            console.log("EMAIL Session mai 2nd Time ham TRY BLOCK KE ANDAR AAGYE HAI HAM");
         } catch (error) {
+            console.log("EMAIL Session ke CATCH BLOCK KE ANDAR AAGYE HAI HAM");
             throw error;
         }
     }
@@ -50,12 +55,13 @@ export class AuthService {
     // AGR USER ALready Login hai too
     async getCurrentUser() {
         try {
-            return await this.account.get();
+           return await this.account.get();
         } catch (error) {
-            console.log("Appwrite service :: logout :: error" , error);
+            console.log("Appwrite service :: getCurrentUser:: error" , error);
+            return null;
         }
 
-        return null; // ye line isliye likhi hai kyoki => 'try' waali condition mai agr user ka account milta hai and agr usme koi error aata hai too wo error 'catch' block mai jaaega but agr user ka account login hee nhi mila that means error too kuch aaya hee nhi too ye catch block ke andar bhi nhi jaaega. IN SHORT na too try block ke andar ka case true hua so yaha sai return kuch hoga hee nhi and na hee koi error aaya hai means catch block ke andar bhi nhi jaaega that means abb ESEE CONDITION KO YE 'NULL' WAALI LINE HANDLE KREGI KI BHAAISAHAB USER ACCOUNT LOGIN NHI MILA HAI SO MAI YE NULL VALUE RETURN KARR RHA HU
+        // return null; // ye line isliye likhi hai kyoki => 'try' waali condition mai agr user ka account milta hai and agr usme koi error aata hai too wo error 'catch' block mai jaaega but agr user ka account login hee nhi mila that means error too kuch aaya hee nhi too ye catch block ke andar bhi nhi jaaega. IN SHORT na too try block ke andar ka case true hua so yaha sai return kuch hoga hee nhi and na hee koi error aaya hai means catch block ke andar bhi nhi jaaega that means abb ESEE CONDITION KO YE 'NULL' WAALI LINE HANDLE KREGI KI BHAAISAHAB USER ACCOUNT LOGIN NHI MILA HAI SO MAI YE NULL VALUE RETURN KARR RHA HU
     }
 
 
