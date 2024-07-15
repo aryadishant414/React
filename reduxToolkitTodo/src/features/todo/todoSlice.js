@@ -1,7 +1,7 @@
 import { createSlice , nanoid} from "@reduxjs/toolkit";
 // nanoid => Generate Unique id's
 
-// Ye initialState ke andar jo pada hai wo hamata ekk 'todo' hai
+// Ye initialState ke andar jo pada hai wo hamara ekk 'todo' hai
 const initialState = {
     todos: [{id: 1, text: "Hello worldx"}]
 }

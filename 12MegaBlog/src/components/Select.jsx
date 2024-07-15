@@ -26,6 +26,7 @@ function Select({
                 <option key = {eachOption} value={eachOption}>
                     {eachOption}
                 </option>
+                
             ))}
 
         </select>

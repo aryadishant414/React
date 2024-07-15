@@ -13,14 +13,14 @@ function Header() {
   const navItems = [
     {
       name: 'Home',
-      slug: "/",   // slug => 'link' ko ham slug keh rhe hai AGr hamara mann hai isko kuch or kehna hai too hamm 'slug' ki jagah koi or name bhi de skte hai like : 'url' ya or bhi kuch bhi
+      slug: "/",   // slug => (mtlb kaha par redirect krega) 'link' ko ham slug keh rhe hai AGr hamara mann hai isko kuch or kehna hai too hamm 'slug' ki jagah koi or name bhi de skte hai like : 'url' ya or bhi kuch bhi
       active:true
     } , 
  
     {
       name: "Login",
       slug : "/login",
-      active : !authStatus,
+      active : !authStatus,  // active -> means ki ye list item tabhi show hoga jab ye authStatus false hoga. initially false hai that means user is not logged in so 'ye wale page par' redirect krwao isko and pehle login krne ka bolo
     } ,
 
      {
@@ -44,7 +44,7 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-customGray'>
       <Container>
         <nav className='flex'>
           <div className='mr-4'>

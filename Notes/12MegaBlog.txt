@@ -1,0 +1,164 @@
+**************** "Mega-Blog" Project Notes *********************
+
+    ** YT-VIDEO-(21) : Appwrite database, file upload and custom queries (This is Video Title Name)
+
+* Things that we will be talking and using in this Project : 
+ 1. Backend Servies => "Appwrite" because it is Open Source and free.
+
+ 2. Tiny-MCE => Its a React's Component and Helps for our VS Code Editor. It is also open source and free.
+
+ 3. html-react-parser => Library hai jo ki parsing (HTML ko convert krne mai kaam aati hai) krne mai help krega.
+
+ 4. React Hook Form => React ke in built Forms hai jo ki ham use krenge.
+
+ 5. Environment Variables ke baare mai bhi baat krenge => jisse Secret variables ko Store kar ske ham safe jagah par.
+
+
+ ***************************** Let's Start our Project **************************
+    Steps : 
+        1. Set up React Vite Project/Application. (vhi hamesha jese react project create krte hai)
+        
+        2. Install Dependencies that we will be using in this Project. Install by using npm(Node Package Manager) :
+            redux-toolkit , react-redux , react-router-dom , appwrite , tinyMCE , html-react-parcer , react-hook-form
+
+        3. Environment Variables set-up => Create a file named '.env' in our root folder(hamare project ke main folder mai. VHI FOLDER JISME "README.MD" file padi hai). After creating this '.env' file and isme wo saare variables daalne hai jo ki bohot SECURE RKHNE HAI HAME. FOR EX : VITE_APPWRITE_URL = "test environment"
+                VITE_APPWRITE_URL = "https://cloud.appwrite.io/v1"; issiko `API Endpoint` kehte hai "appwrite" mai
+                VITE_APPWRITE_PROJECT_ID = "66933502001f71c0b6cc";  // ye saari id's harr baar alag hogi
+                 VITE_APPWRITE_DATABASE_ID = "66933ed400382b78c3df";
+                  VITE_APPWRITE_COLLECTION_ID = "66933f12000021b0e1ac";  // database ke andar ko multiple tables ka collection hai wo
+                  VITE_APPWRITE_BUCKET_ID = "6693410b003833a33178";  // saari images isme hee rkhenge ham. yeh storage ke andar aata hai
+
+	Watch `Video 19` (ENV and Appwrite in React project) => To set up our Environment Variables perfectly
+
+      -> V.Imp NOTE : '.gitignore' file mai jaake => '.env' file-name type krna jisse abb ye file git par track nhi hogi OR else AGR GITHUB PAR YE FILE HOGI TOO KOI BHI HAMARI WEBSITE/APP sai ched chaad karr skta hai by using these IMPORTANT Environment variables.          
+
+        4. Set up "appwrite" Environment for our Project => go to 'appwrite' website and create our account if not. then create & do SETUP.
+
+        5. Store all the Environment Variables in a separate file (In String Format) => So Create a separate folder and inside that create a file which will store all the Environment Variables in "String" format (hame convert krna pdega unhe string mai) always. SO, for storing our environment variables WE HAVE created a folder in 'src' folder NAMED "conf" and inside 'conf' Folder we have created OUR FILE as : "conf.js" file name.         
+        NOTE : THis Step is not Mandatory but its a GOOD PRACTICE 
+
+        
+
+         Step 6. ************************ Concept of Services ******************
+                    SERVICES => Mtlb ki Class banti hai bss. 
+                            abb class ke andar sab methods aate hai. and iss class ka ham object banate hai fiir issi Object ko export krte hai ham because iss object ke pass saare methods ka access hai
+                
+                Now we will be Adding Services that we will be using from "appwrite"
+                
+                Services to ADD : 
+                                -> Authentication Service : 
+                                        create a folder(name of your choice) in 'src' folder. so we have named the folder as "appwrite" because it is related to appwrite as we are creating services by using appwrite. now inside 'appwrite' folder create a file(name of your choice) so we have created a file of name "auth.js".
+                                        In this file we have created our client , account and login , logout , isUSerLoggedIn methods.
+
+                                -> Create Database and Storage Related Services :
+                                        for this also we have created a file(name of our choice) in 'appwrite' folder and file name is "config.js"
+                                        ABB iss file ke iski class ke andar lagbhag saare major methods hamne define krdiye hai LIKE : dekhlena iss file mai smj mai aajega easy hee hai.
+
+                                        NOTE : hamne `Appwrite` ki Documentation(Docs) ko padh padhke reference leke kiya hai sab kuch. Kuch bhi hame Ratna nhi hai and kuch bhi yaad nhi krna hai
+
+
+
+// ******************************** Video 22 (How to configure Redux-Toolkit in Big Projects) ****************************************
+STEPS : 
+        1. Create Store (src folder ke andar store name sai folder banaya hai uske andar 'store.js' file banayi hai)
+        2. Create one more store i.e ekk or file jiske andar "slice and reducers" banaenge. (authentication ka 'slice' bana rhe hai filename : 'authSlice.js')
+        3. Create Components folder. inside this create 2 folders named 'Header' and 'Footer' and inside header folder make a header.jsx file and inside footer folder make a footer.jsx file
+            Now create a 'index.js' file in Components folder coz index file sai export krna easy rahega
+
+        4. Now go to "App.jsx" -> Major kaam issi folder mai hoga
+
+        ... tailwind install krna bhul gaye hai wo bhi install krdena nhi too UI mai styling kuch bhi show nhi hogi
+        
+        5. now create more components in 'src' folder like "pages"
+
+
+
+// **************************************** Video 23 (Production grade react components) *********************************************************
+In this lecture we have learned ki Production mai (mtlb ki companies mai) Components kese banaye jaate hai
+
+Steps : 
+    1. Sabse pehle too components folder ke andar 'index.js' file ke andar saari components files ko import krwana hai. ISSe kaam easy ho jaaega confusion nhi hoga import and export ka
+    2. Create Components -> create 'component' folder ( in 'src' folder ) and inside it create'Container.jsx' file
+        -> "container.jsx" => Empty Container used for styling only. mtlb ki iss container ke andar hamne classes likhi hai bss 
+
+    3. Go to "footer.jsx" file in 'Footer' folder(in Components folder) and paste krdo code from github. as such itna kuch hai nhi iss file mai
+
+    4. Create a 'logo.jsx' file in components folder and then import this file in "footer.jsx" file coz "footer.jsx" file mai ye 'logo.jsx' file ka use krr rhe hai ham
+
+    5. Go in "Header" folder and create "LogoutBtn.jsx" file. -> issme hamm ekk Logout Button banaenge and kuch conditions likhenge ki agr user login hai tab hee usko ye logout button show krna hai else show nhi krna hai 
+
+    6. Now go in "Header.jsx" file and do header ka work here. ISME KAAFI KAAM HAI JO KI HAMNE KIYA HAI
+    
+    V.imp NOTE : yaha ekk syntax hai jo ki bohot jagah use hota hai : 
+                  =>  "{authStatus && ()}"
+                  'authStatus' ki jagah kuch bhi ho skta hai. main iss syntax ka mtlb hai ki agr (pehle wala attribute) 'authStatus' true hai mtlb ki isme value true aayi hai too fiir iske aage wale parenthesis '()' mai jo code likha hai usko UI mai show krwado.
+
+
+    7. Design a Common Button => mtlb hamm ekk button design krr rhe hai jisko hamm baar baar jaha chahe vha use krr paaenge.
+        'components' folder ke andar hamm hamare common button ki file bana rhe hai. file name is : 'Button.jsx'
+
+
+    8. Create a Common 'Input Field" => mtlb ki ekk hee input bana rhe hai ham and isko jaha bhi use krna hai vha use krenge 
+
+    So we have created a 'input.jsx' file in "components" folder
+    
+    v.v.Imp for Advance React Interviews :  "Forward Ref" 'Hook' in REact => 
+    Example to understand this hook : Suppose hame ekk login form banana hai and uss form mai user sai hame 'username' and 'password' chhaiye. BUT HAMM chhate hai ki hamm sabki alag-alag input fields na banaye or sabke liye "common ekk hee input field" banaye TOO yaha esee jagah par ham use krte hai =>  "Forward Ref Hook"
+
+     It is rarely used hook BUT v.v.Imp for Advance React Interviews.
+
+     iss hook ko hamne 'input.jsx' file mai use kiya hai
+
+
+
+
+
+*************************************** Video 24 (How to use "React-hook-form" in production) *******************************************************
+Steps : 
+        1. create more components => create 'Select.jsx' file in components folder (in "src" folder) => This component file is for creating Dropdowns
+
+        2. Create next component i.e `Post Card` => yeh vhi cards hai jo ki hame show ho rhe the hamari blog post ke andar. "PostCard.jsx" file create krri hai hamne components folder mai hee
+
+        3. Create "Login.jsx" component => ISME ham "react-hook-form' ka use krenge SO READ KRR SKTE HO iska docs bhi , kii kese kya hota hai. yeh component file bhi hamm components folder ke andar hee banaenge.
+        NOTE : This is not a form its just a "Component" 
+
+        4. Create a Sign-up Component => same hee hai abb too just like 'Login.jsx' file
+        We have created 'Signup.jsx' file for this component. ISME BHI HAMM "react-hook-form' ks use krenge
+
+        5. Create "AuthLayout.jsx" file in components folder => It ia a Authentication Layout. Its a mechanism Ki kis tarah sai 'pages' ko ya fiir 'routes' ko protect kiya jaata hai
+
+                  
+
+*************************************************** Video 25 (Adding form and slug values) ********************************************************           
+Steps : 
+        1. We have created "RTE.jsx" file in components folder (in 'src' folder) => RTE stands for real time editor
+
+        2. Create a folder `post-form' (in components folder) and inside it create a file "PostForm.jsx". => This file is created To handle the POsts. MTLB ki jab bhi user apni 'Post' ko submit karega too wo chij kese handle hogi.
+
+        NOTE : `Crack MOST Interviews` => iss "PostForm.jsx" file mai ekk 'slugTransform' method hai => ye ekk naya concept hai jo ki "senior level" par interviews crack krne mai help krega...
+        * INTERVIEW Question ye hai ki iss 'slugTransform' method ko use kese krna hai => iss method mai jaake dekhlena smj mai aajega. iske liye notes likhe hai iss "PostForm.jsx" file mai bhi sabse niche dekhna
+
+
+        NOTE : Iss video mai thori bohot compleX chije hai jo bhi yaad nhi ki jaa skti bss by the time practice sai hee aayegi SO Dont do Ratafication. As many projects as we will create based on these concepts as sharper and confident we will be in these concepts
+
+
+***************************************************** Video 26 (Building pages ) ******************************************************************
+Steps : 
+        1. Creating pages inside `pages` folder (in components folder) : "Signup.jsx" file , "Login.jsx" file , "AddPost.jsx" file , "AllPosts.jsx" file , "EditPost.jsx" file , "Home.jsx" file , "Post.jsx" file
+
+
+        Successfully added all pages
+        
+        2. Now go to "main.jsx" file => Abb iske andar we will do "Routing" Work. MTLb ki kab kon kaha kese jaaega kab kon konsi link par click krke kaha jaaega ya fiir kab kon kaha kese navigate hoga ye sab ham iske andar dekhenge.
+        
+        -> "Routes" bhi issi file mai create krenge.
+
+        Now after Completing this "main.jsx" file => AT Time Stamp -> `26:32` (in this video) We will be doing "Debugging"
+
+
+
+// REACT Series Ends HEre 
+        Note : Jitne projects banaenge utna confidence automatically aaega        
+
+            NOW lets move to backend
+

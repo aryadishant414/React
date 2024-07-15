@@ -13,7 +13,7 @@ const authSlice = createSlice({
             state.status = true;
             state.userData = action.payload.userData;
         },
-        logout: (state) => {
+        logout: (state) => {   // chahte too isme bhi 'action' wala parameter le skte the but need hee nhi thi kyoki hame simple logout hee krwana hai kuch show thori krwana hai
             state.status = false;
             state.userData = null;
         }

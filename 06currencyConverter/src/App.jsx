@@ -9,8 +9,7 @@ function App() {
   const [to , setTo] = useState("inr")
   const [convertedAmount , setConvertedAmount] = useState(0)  // its totally our choice ki ham 'useState' ke parameter mai kya value dete hai '0' deni hai too '0' do 'empty string' deni hai too empty string too its totally our choice. SAME RULE APPLIES FOR 'setAmount' ALSO
 
-  const currencyInfo = useCurrencyInfo(from)  // yaha hamne hamara banaya hua 'useCurrencyInfo' hook use kiya hai. 'currencyInfo' hame ekk Object hee too de rha hai jisme saai currencies ke names pade hai (key/ value pair deta hai object that we know)
-  
+  const currencyInfo = useCurrencyInfo(from)  // yaha hamne hamara banaya hua 'useCurrencyInfo' hook use kiya hai. 'currencyInfo' hame ekk Object hee too de rha hai jisme saai currencies ke names pade hai (key/ value pair deta hai object that we know). iske parameter mai hamne 'from' pass kiya hai and initially from ke andr 'usd' pada hai too hamara hook 'USD' ke liye API ko fetch krke dega   
 
   const options = Object.keys(currencyInfo) // API ko fetch krne par hame ekk object milta hai abb uss object mai sai hame keys hee too show krwani hai user ko. keys mai kya hai? -> keys mai hee too saari currencies ke names pade hai. abb user ko ham unn keys ki value thorina show krwaenge
 
@@ -21,12 +20,14 @@ function App() {
     setAmount(convertedAmount)
   }
 
+  
   const convert = () => {
     setConvertedAmount (amount * currencyInfo[to])
   }
 
 
   return (
+    // <></>
     <div
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
@@ -49,7 +50,9 @@ function App() {
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency) => setFrom(currency)}  // is line ki vajah sai 'From' wale mai currency dropdowns change ho rha hai
+                            onCurrencyChange= { 
+                                (currency) => setFrom(currency) 
+                                }  // is line ki vajah sai 'From' wale mai currency dropdowns change ho rha hai
                             selectCurrency={from}
                             onAmountChange={(amount) => setAmount(amount)}
                             
@@ -69,7 +72,9 @@ function App() {
                              label="To"
                             amount={convertedAmount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency) => setTo(currency)}
+                            onCurrencyChange= { 
+                                (currency) => setTo(currency)
+                                }
                             selectCurrency={to} //zzzzzzzzzzzzzzzzz
                             amountDisable
                             
